@@ -14,7 +14,10 @@ function make_curl_args(opts)
   local url = opts.url
   local api_key = get_api_key(opts.api_key_name)
   local data = {
-    messages = { { role = 'system', content = opts.system_prompt }, { role = 'user', content = opts.prompt },
+    messages = { 
+      { role = 'system', content = opts.system_prompt }, 
+      { role = 'user', content = opts.prompt } 
+    },
     model = opts.model,
     temperature = 0.7,
     stream = true,

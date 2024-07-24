@@ -10,19 +10,15 @@ local function write_string_at_cursor(str)
   vim.api.nvim_put(vim.split(str, '\n'), 'c', true, true)
 end
 
-function make_curl_args(opts)
-  local url = opts.url
+local function make_curl_args(opts)
   local api_key = get_api_key(opts.api_key_name)
   local data = {
-    messages = { 
-      { role = 'system', content = opts.system_prompt }, 
-      { role = 'user', content = opts.prompt } 
-    },
+    messages = { { role = 'system', content = opts.system_prompt }, { role = 'user', content = opts.prompt } },
     model = opts.model,
     temperature = 0.7,
-    stream = true,
+    stream = true
   }
-  local args = { '-N', '-X', 'POST', '-H', 'Content-Type: application/json', '-d', vim.json.encode(data), '-H', 'Authorization: Bearer ' .. api_key, url}
+  local args = { '-N', '-X', 'POST', '-H', 'Content-Type: application/json', '-d', vim.json.encode(data), '-H', 'Authorization: Bearer ' .. api_key, opts.url}
 
   return args
 end

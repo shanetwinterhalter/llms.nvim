@@ -1,6 +1,6 @@
 # LLM nvim plugin
 
-Plugin for [Neovim](https://neovim.io/) that allows interacting with LLMs. Based on [Yacine's similar plugin](https://github.com/yacineMTB/dingllm.nvim/tree/masters)
+Plugin for [Neovim](https://neovim.io/) that allows interacting with LLMs. Based on [Yacine's similar plugin](https://github.com/yacineMTB/dingllm.nvim)
 
 # Usage
 
